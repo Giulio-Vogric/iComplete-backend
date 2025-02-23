@@ -1,7 +1,6 @@
-
 from rest_framework import viewsets
 
-from polls.models import Task, TaskSerializer
+from polls.models import Habit, HabitSerializer, Task, TaskSerializer
 
 
 class TaskViewSet(viewsets.ModelViewSet):
@@ -9,4 +8,6 @@ class TaskViewSet(viewsets.ModelViewSet):
     serializer_class = TaskSerializer
 
 
-
+class HabitsViewSet(viewsets.ModelViewSet):
+    queryset = Habit.objects.all()
+    serializer_class = HabitSerializer
